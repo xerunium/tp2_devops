@@ -5,10 +5,12 @@ on:
     workflows: ["Test Backend"]
     types:
       - completed
+  push:
+    branches:
+      - main
 
 jobs:
   build-and-push-docker-image:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-22.04
 
     steps:
