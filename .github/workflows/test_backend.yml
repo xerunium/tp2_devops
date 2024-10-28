@@ -21,9 +21,10 @@ jobs:
           distribution: 'corretto'
 
       - name: Build and test with Maven
+        working-directory: ./simple-api
         run: mvn -B verify sonar:sonar \
           -Dsonar.projectKey=xerunium_tp2_devops \
           -Dsonar.organization=xerunium \
           -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
-          --file ./simple-api/pom.xml
+          --file ./pom.xml
