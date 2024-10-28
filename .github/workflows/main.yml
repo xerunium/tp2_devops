@@ -23,7 +23,7 @@ jobs:
 
       #finally build your app with the latest command
       - name: Build and test with Maven
-        run: mvn clean verify -f ./simple-api/pom.xml
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=xerunium_tp2_devops -Dsonar.organization=xerunium -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./simple-api/pom.xml
 
   # define job to build and publish docker image
   build-and-push-docker-image:

@@ -29,3 +29,8 @@ uses: actions/setup-java@v3 :
 run: mvn clean install : 
 # Commande pour construire et tester le projet
 
+2-3 For what purpose do we need to push docker images?
+
+# Nous poussons des images Docker pour les déployer dans des environnements de 
+# production, faciliter le partage avec d'autres équipes ou services, et garantir 
+# la cohérence de l'application à travers différents environnements.
