@@ -34,3 +34,20 @@ run: mvn clean install :
 # Nous poussons des images Docker pour les déployer dans des environnements de 
 # production, faciliter le partage avec d'autres équipes ou services, et garantir 
 # la cohérence de l'application à travers différents environnements.
+
+Document your quality gate configuration.
+
+mvn -B verify sonar:sonar :
+# Utilise Maven pour lancer la vérification (verify) du projet et exécuter le plugin SonarQube (sonar:sonar)
+
+-Dsonar.projectKey=xerunium_tp2_devops 
+# clé de projet SonarCloud
+
+-Dsonar.organization=xerunium -Dsonar.host.url=https://sonarcloud.io
+# nom de l'organisation
+
+-Dsonar.login=${{ secrets.SONAR_TOKEN }}  
+# login grace au token enregistré
+
+--file ./simple-api/pom.xml
+# Spécifie le chemin du fichier pom.xml
